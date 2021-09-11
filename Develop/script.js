@@ -11,7 +11,7 @@ var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
 
-var password = [];
+
 var guarenteedCharacters = [];
 var possibleCharacters = [];
 
@@ -71,58 +71,60 @@ if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowercaseCharacters &&
   return passwordOptions;
 }
 
+var getRandomCharacter = function (array) {
+  var randomCharacter = Math.floor(Math.random()*array.length)
+  return randomCharacter;
+}
+
 var generatePassword = function() {
+  var password = [];
   var options = getPasswordOptions()
   if (options.special) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*specialCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(specialCharacters[randomCharacter])
+      possibleCharacters.push(specialCharacters[getRandomCharacter(specialCharacters)])
     }
-    guarenteedCharacters.push(specialCharacters[randomCharacter])
+    guarenteedCharacters.push(specialCharacters[getRandomCharacter(specialCharacters)])
   }
 
 
   if (options.numeric) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*numericCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(numericCharacters[randomCharacter])
+      possibleCharacters.push(numericCharacters[getRandomCharacter(numericCharacters)])
     }
-    guarenteedCharacters.push(numericCharacters[randomCharacter])
+    guarenteedCharacters.push(numericCharacters[getRandomCharacter(numericCharacters)])
   }
 
   if (options.lowercase) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*lowerCasedCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(lowerCasedCharacters[randomCharacter])
+      possibleCharacters.push(lowerCasedCharacters[getRandomCharacter(lowerCasedCharacters)])
     }
-    guarenteedCharacters.push(lowerCasedCharacters[randomCharacter])
+    guarenteedCharacters.push(lowerCasedCharacters[getRandomCharacter(lowerCasedCharacters)])
   }
 
   if (options.uppercase) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*upperCasedCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(upperCasedCharacters[randomCharacter])
+      possibleCharacters.push(upperCasedCharacters[getRandomCharacter(upperCasedCharacters)])
     }
-    guarenteedCharacters.push(upperCasedCharacters[randomCharacter])
+    guarenteedCharacters.push(upperCasedCharacters[getRandomCharacter(upperCasedCharacters)])
   }
 
   for (let i = 0; i <options.length; i++) {
-    var randomCharacter = Math.floor(Math.random()*possibleCharacters.length)
-    password.push(possibleCharacters[randomCharacter])
+    password.push(possibleCharacters[getRandomCharacter(possibleCharacters)])
   }
 
   for (let i = 0; i < guarenteedCharacters.length; i++) {
     password[i]=guarenteedCharacters[i]
   }
 
+  return password.join("")
 }
 
 // Get references to the #generate element

@@ -114,7 +114,10 @@ var generatePassword = function() {
     guarenteedCharacters.push(uppercaseCharacters[randomCharacter])
   }
 
-
+  for (let i = 0; i <options.length; i++) {
+    var randomCharacter = Math.floor(Math.random()*possibleCharacters.length)
+    password.push(possibleCharacters[randomCharacter])
+  }
 
 
 

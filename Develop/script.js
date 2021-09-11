@@ -84,13 +84,22 @@ var generatePassword = function() {
   }
 
 
+  if (options.numeric) {
+    // creating a random index for the special Character array
+    var randomCharacter = Math.floor(Math.random()*numericCharacters.length)
+
+    for (let i=0; i < options.length; i++ ) {
+      possibleCharacters.push(numericCharacters[randomCharacter])
+    }
+    guarenteedCharacters.push(numericCharacters[randomCharacter])
+  }
 
 
 
 
 
 
-  
+
 }
 
 // Get references to the #generate element

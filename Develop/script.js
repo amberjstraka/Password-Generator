@@ -12,10 +12,6 @@ var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
 ];
 
 
-var guarenteedCharacters = [];
-var possibleCharacters = [];
-
-
 function getPasswordOptions() {
   // Variable to store length of password from user input
   var length = parseInt(
@@ -78,6 +74,8 @@ var getRandomCharacter = function (array) {
 
 var generatePassword = function() {
   var password = [];
+  var guarenteedCharacters = [];
+var possibleCharacters = [];
   var options = getPasswordOptions()
   if (options.special) {
     // creating a random index for the special Character array

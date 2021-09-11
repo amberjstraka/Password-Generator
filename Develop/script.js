@@ -96,22 +96,22 @@ var generatePassword = function() {
 
   if (options.lowercase) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*lowercaseCharacters.length)
+    var randomCharacter = Math.floor(Math.random()*lowerCasedCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(lowercaseCharacters[randomCharacter])
+      possibleCharacters.push(lowerCasedCharacters[randomCharacter])
     }
-    guarenteedCharacters.push(lowercaseCharacters[randomCharacter])
+    guarenteedCharacters.push(lowerCasedCharacters[randomCharacter])
   }
 
   if (options.uppercase) {
     // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*uppercaseCharacters.length)
+    var randomCharacter = Math.floor(Math.random()*upperCasedCharacters.length)
 
     for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(uppercaseCharacters[randomCharacter])
+      possibleCharacters.push(upperCasedCharacters[randomCharacter])
     }
-    guarenteedCharacters.push(uppercaseCharacters[randomCharacter])
+    guarenteedCharacters.push(upperCasedCharacters[randomCharacter])
   }
 
   for (let i = 0; i <options.length; i++) {
@@ -119,9 +119,9 @@ var generatePassword = function() {
     password.push(possibleCharacters[randomCharacter])
   }
 
-
-
-
+  for (let i = 0; i < guarenteedCharacters.length; i++) {
+    password[i]=guarenteedCharacters[i]
+  }
 
 }
 

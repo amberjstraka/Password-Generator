@@ -11,7 +11,6 @@ var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
 
-
 function getPasswordOptions() {
   // Variable to store length of password from user input
   var length = parseInt(
@@ -86,7 +85,6 @@ var possibleCharacters = [];
     guarenteedCharacters.push(specialCharacters[getRandomCharacter(specialCharacters)])
   }
 
-
   if (options.numeric) {
     // creating a random index for the special Character array
 
@@ -139,4 +137,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-// generateBtn.addEventListener("click", getPasswordOptions);

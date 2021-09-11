@@ -72,18 +72,9 @@ if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowercaseCharacters &&
 }
 
 var generatePassword = function() {
-  var options = getPasswordOptions()
-  if (options.special) {
-    // creating a random index for the special Character array
-    var randomCharacter = Math.floor(Math.random()*specialCharacters.length)
-
-    for (let i=0; i < options.length; i++ ) {
-      possibleCharacters.push(specialCharacters[randomCharacter])
-      
-    }
     
   }
-}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

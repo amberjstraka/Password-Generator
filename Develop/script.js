@@ -94,6 +94,16 @@ var generatePassword = function() {
     guarenteedCharacters.push(numericCharacters[randomCharacter])
   }
 
+  if (options.lowercase) {
+    // creating a random index for the special Character array
+    var randomCharacter = Math.floor(Math.random()*lowercaseCharacters.length)
+
+    for (let i=0; i < options.length; i++ ) {
+      possibleCharacters.push(lowercaseCharacters[randomCharacter])
+    }
+    guarenteedCharacters.push(lowercaseCharacters[randomCharacter])
+  }
+
 
 
 
